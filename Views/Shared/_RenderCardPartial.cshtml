@@ -1,0 +1,15 @@
+﻿@model RenderCardViewModel
+
+<div class="col-md-4 mb-4">
+    <a href="@Url.Action(Model.Action, "Analysis")" class="card-link">
+        <div class="card border-@Model.ColorClass card-hover">
+            <div class="card-header bg-@Model.ColorClass text-white text-center">
+                <i class="fa @Model.Icon fa-3x"></i>
+            </div>
+            <div class="card-body text-center">
+                <h5 class="card-title">@Model.Title</h5>
+                <p class="card-text">Bu analiz ile ilgili detaylı bilgileri görmek için tıklayın.</p>
+            </div>
+        </div>
+    </a>
+</div>

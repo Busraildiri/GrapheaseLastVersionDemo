@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Analizler";
+}
+
+@* <h1 class="text-center my-5">Analizler</h1> *@
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
+    </div>
+}
+
+<div class="container">
+    <div class="row">
+        @Html.Partial("_RenderCardPartial", new RenderCardViewModel { Action = "ProfitByCategory", Title = "Kategoriye Göre Satış Kar Oranları", Icon = "fa-chart-pie", ColorClass = "info" })
+        @Html.Partial("_RenderCardPartial", new RenderCardViewModel { Action = "ProfitByCity", Title = "Şehire Göre Satış Karı Oranları", Icon = "fa-city", ColorClass = "success" })
+        @Html.Partial("_RenderCardPartial", new RenderCardViewModel { Action = "ProfitByGender", Title = "Cinsiyete Göre Ürün Satış Karı Oranları", Icon = "fa-venus-mars", ColorClass = "warning" })
+        @Html.Partial("_RenderCardPartial", new RenderCardViewModel { Action = "ProfitMarginAnalysis", Title = "Kar Marjı Analizi", Icon = "fa-percentage", ColorClass = "primary" })
+        @Html.Partial("_RenderCardPartial", new RenderCardViewModel { Action = "TopSellingProducts", Title = "Ürün Adına Göre Satış Oranları", Icon = "fa-tags", ColorClass = "danger" })
+    </div>
+</div>
+
+<style>
+    .card-hover:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-link {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .card-body {
+        transition: background-color 0.3s ease;
+    }
+
+    .card-hover:hover .card-body {
+        background-color: #f8f9fa;
+    }
+</style>

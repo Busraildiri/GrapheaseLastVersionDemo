@@ -1,0 +1,135 @@
+﻿@{
+    ViewData["Title"] = "Graphease - Excel Analiz Aracı";
+}
+
+<div class="custom-container">
+
+    <div class="intro-section">
+        <h2 class="intro-title">Graphease - Excel Analiz Aracı</h2>
+        <p class="intro-description">
+            Sitemiz, ürün verilerinizi analiz etmek için hazırlanmış özel bir araçtır.
+            Product sınıfınızda bulunan verilere uygun bir Excel dosyası yüklemeniz yeterlidir.
+            İlk satırı düzenledikten sonra, başka bir Excel işlemi yapmanıza gerek yoktur.
+            Kullanım kolaylığı sayesinde veri analizi daha pratik ve hızlıdır.
+            Özellikle e-ticaret ve perakende sektöründeki işletmeler için idealdir.
+        </p>
+    </div>
+
+    <div class="upload-section">
+        <form method="post" enctype="multipart/form-data" asp-action="Upload">
+            <div class="file-input">
+                <input type="file" name="excelFile" />
+            </div>
+            <button class="upload-btn" type="submit">Dosya Yükle</button>
+            <p class="file-warning">Lütfen yalnızca .xlsx uzantılı dosyaları yükleyin.</p>
+            <p class="file-warning">Örnek excel dosya yapısı aşağıdaki gibidir.</p>
+        </form>
+    </div>
+
+    <div class="download-section">
+        <a href="https://docs.google.com/spreadsheets/d/1Mg2wLejiPuI5X9JfqqKHGalpsDJ3QYoY/edit?usp=sharing&ouid=108355253070597305028&rtpof=true&sd=true" download="OrnekDosya.xlsx">
+            <button class="download-btn">Excel Dosyasını İndir</button>
+        </a>
+    </div>
+
+</div>
+
+<style>
+
+    .download-section {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .download-btn {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .download-btn:hover {
+            background-color: #45a049;
+        }
+
+    .custom-container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 2px solid #ccc;
+        background-color: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .intro-title {
+        font-size: 2.5rem; 
+        border-bottom: 2px solid #aaa; 
+        display: inline-block; 
+        padding: 0 10px; 
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+        transition: all 0.3s; 
+    }
+
+        .intro-title:hover {
+            font-size: 2.7rem; 
+        }
+
+    .intro-section {
+        margin-bottom: 30px;
+    }
+
+    .intro-title {
+        font-size: 24px;
+        color: black;
+        transition: font-size 0.3s ease;
+    }
+
+        .intro-title:hover {
+            font-size: 26px;
+        }
+
+    .intro-description {
+        font-size: 16px;
+        color: black;
+        margin-top: 10px;
+    }
+
+    .upload-section {
+        text-align: center;
+    }
+
+    .file-input > input[type="file"] {
+        display: block;
+        margin: 0 auto 20px;
+        padding: 10px 20px;
+        background-color: #e6e6e6;
+        border: 1px solid #f0ffff;
+        cursor: pointer;
+       
+    }
+
+    .upload-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #d4d4d4;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+        .upload-btn:hover {
+            background-color: #bfbfbf;
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+    .file-warning {
+        display: block;
+        margin-top: 10px;
+        color: red;
+        font-size: 14px;
+    }
+
+</style>
